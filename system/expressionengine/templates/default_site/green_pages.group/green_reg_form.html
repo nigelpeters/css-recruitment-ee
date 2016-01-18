@@ -1,0 +1,122 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+					{exp:channel:entries}
+				  		<h1 class="head-cssgreen">{title}</h1>
+				  		{content}
+					{/exp:channel:entries}
+
+
+				  </div>
+			  </div>
+
+		  <!-- FORM -->
+		  <div class="well well-csslgrey">
+		  <h2 class="head-cssgreen">Your Details</h2>
+		  <p>Ollaut vel maximossitae vid essi veles volo tempe laturit molutem que dit es mo to verum il molor.</p>
+			
+		  {exp:zoo_visitor:registration_form class="form-horizontal" return="job-seekers/jobseeker-confirmation" error_handling="inline" error_delimiters='<div class="alert alert-danger">|</div>'}
+			
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3">Full Name</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="screen_name" name="screen_name" placeholder="Full Name" value="{screen_name}" />
+			      {error:screen_name}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3">Username</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="username" name="username" placeholder="username" value="{username}" />
+			      {error:username}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="email" class="col-sm-3">Email Address</label>
+			    <div class="col-sm-9">
+			      <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+			      {error:email}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="confirm-email" class="col-sm-3">Confirm Email</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="email_confirm" name="email_confirm" placeholder="Confirm Email" />
+			      {error:email_confirm}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="password" class="col-sm-3">Password</label>
+			    <div class="col-sm-9">
+			      <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+			      <span class="help-block">5 characters or more</span>
+			      {error:password}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="confirm-password" class="col-sm-3">Confirm Password</label>
+			    <div class="col-sm-9">
+			      <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password" />
+			      {error:password_confirm}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="market-info" class="col-sm-3">Marketing Information</label>
+			    <div class="col-sm-9">
+			      <input type="checkbox" value="" name="market-info" />
+			      <span class="help-block">From time to time we may send out marketing information which we feel is of use to our users. Please check this box if you wish to receive this additional service. This will not affect your Jobs By Email subscriptions.</span>
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="agree" class="col-sm-3">Please tick box to confirm the following:</label>
+			    <div class="col-sm-9">
+			      <input type="checkbox" value="y" name="accept_terms" />
+			      <span class="help-block">I have read and agree to the CSS People <a href="#">terms and conditions</a> and <a href="#">privacy statement</a>. (This is a condition of registration.)</span>
+			      {error:accept_terms}
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-12">
+			      <button type="submit" class="btn btn-cssgreen pull-right">Register now</button>
+			    </div>
+			  </div>
+			  
+			{/exp:zoo_visitor:registration_form}
+		  
+		  </div>
+
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_expertise_menu"}
+			  {embed="includes/inc_job_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

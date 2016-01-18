@@ -1,0 +1,903 @@
+/* -----------------------------------------------------------------------
+
+	Acumen Design Website Styles
+	Copyright 2012 Nigel Peters
+	Designed and built with all the love in the world @nutyga
+
+----------------------------------------------------------------------- */
+/* Varibles
+-------------------------------------------------------------- */
+/* Universal Styles
+-------------------------------------------------------------- */
+body {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Arial, sans-serif;
+  color: #706f6f;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Arial, sans-serif;
+}
+a {
+  color: #3fbfad;
+}
+img,
+video,
+audio,
+iframe,
+object {
+  max-width: 100%;
+}
+.sub-head,
+legend {
+  font-size: 12px;
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.column-padding {
+  padding-top: 20px;
+}
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 1170px !important;
+}
+.well {
+  min-height: 20px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-image: none;
+  background: transparent;
+  background-color: #dadada;
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  filter: none;
+}
+.well h2 {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.well ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.well ul li {
+  font-size: 13px;
+  padding: 5px 0;
+  border-top: 1px dashed #58585a;
+}
+.well ul li a {
+  color: #706f6f;
+}
+.well-expertise {
+  min-height: 20px;
+  padding: 0px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-image: none;
+  background-color: #dadada;
+  border: none;
+  border-radius: 4px;
+}
+.well-expertise h2 {
+  padding: 10px 10px 0 10px;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.well-expertise ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.well-expertise ul li {
+  font-size: 13px;
+  margin-right: 10px;
+}
+.well-expertise ul li.active {
+  background-color: #FFFFFF;
+}
+.well-expertise ul li a {
+  color: #706f6f;
+  border-top: 1px dashed #58585a;
+  padding: 5px 0 5px 0px;
+  display: block;
+  margin-left: 10px;
+  padding-right: 10px;
+}
+.head-cssgreen {
+  color: #dedc00;
+}
+.head-csspink {
+  color: #e6007e;
+}
+.head-csscyan {
+  color: #3fbfad;
+}
+.well-cssgreen {
+  background-color: #f3f1b2;
+}
+.well-csspink {
+  background-color: #fadceb;
+}
+.well-csscyan {
+  background-color: #bce6dd;
+}
+.well-csslgrey {
+  background-color: #f5f5f6;
+}
+.col-xs-8 img:first-child,
+.col-xs-4 img:first-child,
+.col-xs-3 img:first-child {
+  margin-top: 20px;
+}
+blockquote {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+blockquote p {
+  font-size: 15px;
+  font-style: italic;
+}
+blockquote small {
+  margin-top: 8px;
+  font-size: 13px;
+}
+blockquote small::before {
+  content: none;
+}
+[class*="icon-"] {
+  display: inline-block;
+}
+.lead {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.btn {
+  border: none;
+  text-align: left;
+}
+.btn-block {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.btn-block .glyphicon {
+  right: 0px;
+  top: 3px;
+}
+.btn-group-justified a.btn-cssgreen:first-child {
+  border-right: 1px solid #f3f1b2;
+}
+.btn-group-justified a.btn-csspink:first-child {
+  border-right: 1px solid #fadceb;
+}
+.btn-group-justified a.btn-csscyan:first-child {
+  border-right: 1px solid #bce6dd;
+}
+.btn-group-justified a.btn-cssgrey:first-child {
+  border-right: 1px solid #f5f5f6;
+}
+.btn-cssgrey {
+  color: #ffffff;
+  background-color: #706f6f;
+  border-color: #636262;
+}
+.btn-cssgrey:hover,
+.btn-cssgrey:focus,
+.btn-cssgrey:active,
+.btn-cssgrey.active,
+.open .dropdown-toggle.btn-cssgrey {
+  color: #ffffff;
+  background-color: #5c5b5b;
+  border-color: #444444;
+}
+.btn-cssgrey:active,
+.btn-cssgrey.active,
+.open .dropdown-toggle.btn-cssgrey {
+  background-image: none;
+}
+.btn-cssgrey.disabled,
+.btn-cssgrey[disabled],
+fieldset[disabled] .btn-cssgrey,
+.btn-cssgrey.disabled:hover,
+.btn-cssgrey[disabled]:hover,
+fieldset[disabled] .btn-cssgrey:hover,
+.btn-cssgrey.disabled:focus,
+.btn-cssgrey[disabled]:focus,
+fieldset[disabled] .btn-cssgrey:focus,
+.btn-cssgrey.disabled:active,
+.btn-cssgrey[disabled]:active,
+fieldset[disabled] .btn-cssgrey:active,
+.btn-cssgrey.disabled.active,
+.btn-cssgrey[disabled].active,
+fieldset[disabled] .btn-cssgrey.active {
+  background-color: #706f6f;
+  border-color: #636262;
+}
+.btn-cssgreen {
+  color: #706f6f;
+  background-color: #dedc00;
+  border-color: #c5c300;
+}
+.btn-cssgreen:hover,
+.btn-cssgreen:focus,
+.btn-cssgreen:active,
+.btn-cssgreen.active,
+.open .dropdown-toggle.btn-cssgreen {
+  color: #706f6f;
+  background-color: #b5b400;
+  border-color: #878600;
+}
+.btn-cssgreen:active,
+.btn-cssgreen.active,
+.open .dropdown-toggle.btn-cssgreen {
+  background-image: none;
+}
+.btn-cssgreen.disabled,
+.btn-cssgreen[disabled],
+fieldset[disabled] .btn-cssgreen,
+.btn-cssgreen.disabled:hover,
+.btn-cssgreen[disabled]:hover,
+fieldset[disabled] .btn-cssgreen:hover,
+.btn-cssgreen.disabled:focus,
+.btn-cssgreen[disabled]:focus,
+fieldset[disabled] .btn-cssgreen:focus,
+.btn-cssgreen.disabled:active,
+.btn-cssgreen[disabled]:active,
+fieldset[disabled] .btn-cssgreen:active,
+.btn-cssgreen.disabled.active,
+.btn-cssgreen[disabled].active,
+fieldset[disabled] .btn-cssgreen.active {
+  background-color: #dedc00;
+  border-color: #c5c300;
+}
+.btn-cssdkgreen {
+  color: #706f6f;
+  background-color: #a7a500;
+  border-color: #8e8c00;
+}
+.btn-cssdkgreen:hover,
+.btn-cssdkgreen:focus,
+.btn-cssdkgreen:active,
+.btn-cssdkgreen.active,
+.open .dropdown-toggle.btn-cssdkgreen {
+  color: #706f6f;
+  background-color: #7e7d00;
+  border-color: #504f00;
+}
+.btn-cssdkgreen:active,
+.btn-cssdkgreen.active,
+.open .dropdown-toggle.btn-cssdkgreen {
+  background-image: none;
+}
+.btn-cssdkgreen.disabled,
+.btn-cssdkgreen[disabled],
+fieldset[disabled] .btn-cssdkgreen,
+.btn-cssdkgreen.disabled:hover,
+.btn-cssdkgreen[disabled]:hover,
+fieldset[disabled] .btn-cssdkgreen:hover,
+.btn-cssdkgreen.disabled:focus,
+.btn-cssdkgreen[disabled]:focus,
+fieldset[disabled] .btn-cssdkgreen:focus,
+.btn-cssdkgreen.disabled:active,
+.btn-cssdkgreen[disabled]:active,
+fieldset[disabled] .btn-cssdkgreen:active,
+.btn-cssdkgreen.disabled.active,
+.btn-cssdkgreen[disabled].active,
+fieldset[disabled] .btn-cssdkgreen.active {
+  background-color: #a7a500;
+  border-color: #8e8c00;
+}
+.btn-csslgreen {
+  color: #706f6f;
+  background-color: #f3f1b2;
+  border-color: #f0ed9c;
+}
+.btn-csslgreen:hover,
+.btn-csslgreen:focus,
+.btn-csslgreen:active,
+.btn-csslgreen.active,
+.open .dropdown-toggle.btn-csslgreen {
+  color: #706f6f;
+  background-color: #edeb8f;
+  border-color: #e7e367;
+}
+.btn-csslgreen:active,
+.btn-csslgreen.active,
+.open .dropdown-toggle.btn-csslgreen {
+  background-image: none;
+}
+.btn-csslgreen.disabled,
+.btn-csslgreen[disabled],
+fieldset[disabled] .btn-csslgreen,
+.btn-csslgreen.disabled:hover,
+.btn-csslgreen[disabled]:hover,
+fieldset[disabled] .btn-csslgreen:hover,
+.btn-csslgreen.disabled:focus,
+.btn-csslgreen[disabled]:focus,
+fieldset[disabled] .btn-csslgreen:focus,
+.btn-csslgreen.disabled:active,
+.btn-csslgreen[disabled]:active,
+fieldset[disabled] .btn-csslgreen:active,
+.btn-csslgreen.disabled.active,
+.btn-csslgreen[disabled].active,
+fieldset[disabled] .btn-csslgreen.active {
+  background-color: #f3f1b2;
+  border-color: #f0ed9c;
+}
+.btn-csscyan {
+  color: #ffffff;
+  background-color: #3fbfad;
+  border-color: #39ac9c;
+}
+.btn-csscyan:hover,
+.btn-csscyan:focus,
+.btn-csscyan:active,
+.btn-csscyan.active,
+.open .dropdown-toggle.btn-csscyan {
+  color: #ffffff;
+  background-color: #35a091;
+  border-color: #297e72;
+}
+.btn-csscyan:active,
+.btn-csscyan.active,
+.open .dropdown-toggle.btn-csscyan {
+  background-image: none;
+}
+.btn-csscyan.disabled,
+.btn-csscyan[disabled],
+fieldset[disabled] .btn-csscyan,
+.btn-csscyan.disabled:hover,
+.btn-csscyan[disabled]:hover,
+fieldset[disabled] .btn-csscyan:hover,
+.btn-csscyan.disabled:focus,
+.btn-csscyan[disabled]:focus,
+fieldset[disabled] .btn-csscyan:focus,
+.btn-csscyan.disabled:active,
+.btn-csscyan[disabled]:active,
+fieldset[disabled] .btn-csscyan:active,
+.btn-csscyan.disabled.active,
+.btn-csscyan[disabled].active,
+fieldset[disabled] .btn-csscyan.active {
+  background-color: #3fbfad;
+  border-color: #39ac9c;
+}
+.btn-csspink {
+  color: #ffffff;
+  background-color: #e6007e;
+  border-color: #cd0070;
+}
+.btn-csspink:hover,
+.btn-csspink:focus,
+.btn-csspink:active,
+.btn-csspink.active,
+.open .dropdown-toggle.btn-csspink {
+  color: #ffffff;
+  background-color: #bd0068;
+  border-color: #8f004f;
+}
+.btn-csspink:active,
+.btn-csspink.active,
+.open .dropdown-toggle.btn-csspink {
+  background-image: none;
+}
+.btn-csspink.disabled,
+.btn-csspink[disabled],
+fieldset[disabled] .btn-csspink,
+.btn-csspink.disabled:hover,
+.btn-csspink[disabled]:hover,
+fieldset[disabled] .btn-csspink:hover,
+.btn-csspink.disabled:focus,
+.btn-csspink[disabled]:focus,
+fieldset[disabled] .btn-csspink:focus,
+.btn-csspink.disabled:active,
+.btn-csspink[disabled]:active,
+fieldset[disabled] .btn-csspink:active,
+.btn-csspink.disabled.active,
+.btn-csspink[disabled].active,
+fieldset[disabled] .btn-csspink.active {
+  background-color: #e6007e;
+  border-color: #cd0070;
+}
+/* Cookie Consent
+-------------------------------------------------------------- */
+.cookie-consent {
+  padding: 10px;
+  background-color: #dadada;
+}
+/* Main Nav Bar
+-------------------------------------------------------------- */
+.navbar {
+  min-height: 35px;
+  margin-bottom: 0px;
+}
+.navbar .divider-vertical {
+  height: 13px;
+  margin: 0 9px;
+  margin-top: 15px;
+  border-right: 1px solid #ffffff;
+}
+.navbar-default {
+  background-image: none;
+  background-color: #58585a;
+  border: none;
+  box-shadow: none;
+}
+.navbar-default .navbar-nav > li > a {
+  text-shadow: none;
+  color: #FFFFFF;
+  padding: 13px 0 0 0;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #dadada;
+}
+.navbar-default .navbar-nav > li > a.cssgreenactive {
+  color: #dedc00;
+}
+.navbar-default .navbar-nav > li > a.csspinkactive {
+  color: #e6007e;
+}
+.navbar-default .navbar-nav > li > a.csscyanactive {
+  color: #3fbfad;
+}
+.navbar-default .navbar-nav > li > a.cssgreyactive {
+  color: #706f6f;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-image: none;
+  background-color: transparent;
+  color: #dedc00;
+}
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.navbar-nav > li {
+  float: left;
+}
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.navbar-left {
+  float: left !important;
+}
+.navbar-right {
+  float: right !important;
+}
+/* Header bar
+-------------------------------------------------------------- */
+header.home {
+  background-color: #bce6dd;
+}
+header.home .container {
+  background-image: url('../img/img-css-homepage.jpg');
+  height: 450px;
+  padding-top: 20px;
+  position: relative;
+  display: block;
+}
+header.home .container .homebuts {
+  position: absolute;
+  bottom: 60px;
+}
+header.home .container .homebuts .btn {
+  position: relative;
+  padding-right: 50px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+header.home .container .homebuts .btn-csscyan {
+  color: #ffffff;
+}
+header.home .container .homebuts .btn-csscyan [class*="icon-"] {
+  color: #3fbfad;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+header.home .container .homebuts .btn-csscyan:hover [class*="icon-"] {
+  color: #FFFFFF;
+}
+header.home .container .homebuts .btn-cssgreen {
+  color: #ffffff;
+}
+header.home .container .homebuts .btn-cssgreen [class*="icon-"] {
+  color: #dedc00;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+header.home .container .homebuts .btn-cssgreen:hover [class*="icon-"] {
+  color: #FFFFFF;
+}
+header.home .container .homebuts .btn-csspink {
+  color: #ffffff;
+}
+header.home .container .homebuts .btn-csspink [class*="icon-"] {
+  color: #e6007e;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+header.home .container .homebuts .btn-csspink:hover [class*="icon-"] {
+  color: #FFFFFF;
+}
+header.internal {
+  background-color: #706f6f;
+}
+header.internal .container {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+header.internal .container p {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 34px;
+}
+/* Secondary Nav
+-------------------------------------------------------------- */
+.second-level-green {
+  border-top: #dedc00 5px solid;
+}
+.second-level-green .nav li {
+  float: left;
+}
+.second-level-green .nav li a {
+  color: #706f6f;
+  padding: 5px 10px;
+}
+.second-level-green .nav li a:hover,
+.second-level-green .nav li a.active {
+  background-color: #dedc00;
+}
+.second-level-pink {
+  border-top: #e6007e 5px solid;
+}
+.second-level-pink .nav li {
+  float: left;
+}
+.second-level-pink .nav li a {
+  color: #706f6f;
+  padding: 5px 10px;
+}
+.second-level-pink .nav li a:hover,
+.second-level-pink .nav li a.active {
+  background-color: #e6007e;
+}
+.second-level-cyan {
+  border-top: #3fbfad 5px solid;
+}
+.second-level-cyan .nav li {
+  float: left;
+}
+.second-level-cyan .nav li a {
+  color: #706f6f;
+  padding: 5px 10px;
+}
+.second-level-cyan .nav li a:hover,
+.second-level-cyan .nav li a.active {
+  background-color: #3fbfad;
+}
+.second-level-grey {
+  border-top: #dadada 5px solid;
+}
+.second-level-grey .nav li {
+  float: left;
+}
+.second-level-grey .nav li a {
+  color: #58585a;
+  padding: 5px 10px;
+}
+.second-level-grey .nav li a:hover,
+.second-level-grey .nav li a.active {
+  background-color: #dadada;
+}
+.second-level-pink > .no-nav,
+.second-level-green > .no-nav,
+.second-level-cyan > .no-nav,
+.second-level-grey > .no-nav {
+  padding: 0px;
+}
+.second-level-pink > .no-nav li,
+.second-level-green > .no-nav li,
+.second-level-cyan > .no-nav li,
+.second-level-grey > .no-nav li {
+  list-style-type: none;
+}
+/* Article Listings
+-------------------------------------------------- */
+.article-listing {
+  border-top: 1px dotted #dadada;
+  padding: 20px 0 20px 0;
+  margin-right: 20px;
+}
+.article-listing h2 {
+  margin: 0 0 10px 0;
+  padding: 0px;
+  font-size: 24px;
+}
+.article-listing h2 a {
+  color: #706f6f;
+}
+.blog-listing {
+  border-bottom: 1px dotted #dadada;
+  padding: 20px 0 20px 0;
+  margin-right: 20px;
+}
+.blog-listing h2 {
+  margin: 0 0 10px 0;
+  padding: 0px;
+  font-size: 24px;
+}
+.blog-listing h2 a {
+  color: #706f6f;
+}
+.well .blog-listing {
+  padding: 0 0 10px 0;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.well .blog-listing h2 {
+  font-size: 20px;
+}
+.well .blog-listing:last-child {
+  border-bottom: none;
+  margin: 0px;
+  padding: 0px;
+}
+.csspagigreen a {
+  color: #dedc00;
+}
+.csspagigreen > li > a:hover,
+.csspagigreen > li > span:hover,
+.csspagigreen > li > a:focus,
+.csspagigreen > li > span:focus {
+  background-color: #f3f1b2;
+  color: #706f6f;
+}
+.csspagigreen > .active > a,
+.csspagigreen > .active > span,
+.csspagigreen > .active > a:hover,
+.csspagigreen > .active > span:hover,
+.csspagigreen > .active > a:focus,
+.csspagigreen > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #a7a500;
+  border-color: #a7a500;
+  cursor: default;
+}
+.csspagipink a {
+  color: #e6007e;
+}
+.csspagipink > li > a:hover,
+.csspagipink > li > span:hover,
+.csspagipink > li > a:focus,
+.csspagipink > li > span:focus {
+  background-color: #fadceb;
+  color: #706f6f;
+}
+.csspagipink > .active > a,
+.csspagipink > .active > span,
+.csspagipink > .active > a:hover,
+.csspagipink > .active > span:hover,
+.csspagipink > .active > a:focus,
+.csspagipink > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #ad005f;
+  border-color: #ad005f;
+  cursor: default;
+}
+.csspagicyan a {
+  color: #3fbfad;
+}
+.csspagicyan > li > a:hover,
+.csspagicyan > li > span:hover,
+.csspagicyan > li > a:focus,
+.csspagicyan > li > span:focus {
+  background-color: #bce6dd;
+  color: #706f6f;
+}
+.csspagicyan > .active > a,
+.csspagicyan > .active > span,
+.csspagicyan > .active > a:hover,
+.csspagicyan > .active > span:hover,
+.csspagicyan > .active > a:focus,
+.csspagicyan > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #2f8f82;
+  border-color: #2f8f82;
+  cursor: default;
+}
+.csspagigrey a {
+  color: #706f6f;
+}
+.csspagigrey > li > a:hover,
+.csspagigrey > li > span:hover,
+.csspagigrey > li > a:focus,
+.csspagigrey > li > span:focus {
+  background-color: #dadada;
+  color: #706f6f;
+}
+.csspagigrey > .active > a,
+.csspagigrey > .active > span,
+.csspagigrey > .active > a:hover,
+.csspagigrey > .active > span:hover,
+.csspagigrey > .active > a:focus,
+.csspagigrey > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #58585a;
+  border-color: #58585a;
+  cursor: default;
+}
+article img {
+  margin-bottom: 10px;
+}
+article img.pull-right {
+  margin-left: 10px;
+}
+article img.pull-left {
+  margin-right: 10px;
+}
+.twitter-share-button {
+  padding: 0px;
+  margin-left: 10px !important;
+  width: 80px !important;
+}
+/* Job Listing Page
+-------------------------------------------------- */
+.back-link {
+  margin-top: 20px;
+}
+.back-link a {
+  color: #706f6f;
+}
+.table tbody > tr:first-child > td {
+  border: none;
+}
+.table tbody > tr > td {
+  padding-left: 0;
+  padding-right: 0;
+}
+ul.wysihtml5-toolbar > li > .btn-group > .btn,
+ul.wysihtml5-toolbar > li > .btn {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #F5F5F5;
+  background-image: -moz-linear-gradient(center top, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border-color: #CCCCCC #CCCCCC #B3B3B3;
+  border-image: none;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 18px;
+  margin-bottom: 0;
+  padding: 4px 10px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+}
+.eeform {
+  margin-top: 10px;
+}
+/* Team Members
+-------------------------------------------------- */
+.team-member {
+  position: relative;
+  margin-bottom: 20px;
+}
+.team-member h2 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+.team-member .tm-info p {
+  margin: 0px;
+  padding: 0px;
+  line-height: 18px;
+  font-size: 85%;
+}
+.team-member .tm-info p:first-child {
+  margin-top: 22px;
+}
+.team-member .team-profile-pic {
+  float: left;
+  width: 100%;
+  position: relative;
+  height: 120px;
+}
+.team-member .team-profile-pic .big-pic {
+  position: absolute;
+}
+.team-member .team-profile-pic .small-pic {
+  position: absolute;
+  left: 90px;
+  top: 45px;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+  width: 1172px;
+  border-left: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+}
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #58585a;
+  margin: 0px auto;
+  width: 1172px;
+}
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+/*
+#wrap > .home {
+  padding: 35px 15px 0;
+}
+*/
+footer .navbar-default {
+  background-image: none;
+  background: transparent;
+  /* background-color: @cssgrey; */
+  box-shadow: none;
+  border: none;
+  filter: none;
+}
+.container .credit {
+  margin: 20px 0;
+}
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+code {
+  font-size: 80%;
+}

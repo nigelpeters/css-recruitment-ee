@@ -1,0 +1,109 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="pink_pages/pink_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+				  	<h1 class="head-csspink">Training results for “Baking”</h1>
+				  	<p>Click on the Apply/Details button next to each job to see the full posting.</p>
+
+				  {exp:channel:entries channel="training_courses" status="open" limit="7"}
+				  <article class="article-listing">
+				  	<h2><a href="{title_permalink='training/view'}">{title}</a></h2>
+				  	
+				  	<div class="row">
+				  		<div class="col-xs-4">
+				  			<p><strong>Course date: </strong>{course_date format="%d %F, %Y"}</p>
+				  		</div>
+				  		<div class="col-xs-4">
+				  			<p><strong>Duration: </strong>{course_duration}</p>
+				  		</div>
+				  		<div class="col-xs-4">
+				  			<a href="{title_permalink='training/view'}" class="btn btn-csspink btn-xs pull-right">Details</a>
+				  		</div>
+				  	</div>
+				  </article>
+
+					{paginate}
+					  {pagination_links}
+					 <ul class="pagination csspagipink">
+					  {previous_page}
+					  	<li><a href="{pagination_url}">&laquo;</a></li>
+					  {/previous_page}
+					  {page}
+					  	<li {if current_page}class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+					  {/page}
+					  {next_page}
+					  	<li><a href="{pagination_url}">&raquo;</a></li>
+					  {/next_page}	
+					</ul>
+					  {/pagination_links}
+
+					{/paginate}
+
+					{/exp:channel:entries}
+
+				  </div>
+
+				  <div class="col-xs-3">
+				  	<div class="well">
+				  		<h2>Training search</h2>
+				  		<form role="form">
+						  <div class="form-group">
+						    <label for="Keywords">Keywords</label>
+						    <input type="text" class="form-control input-sm" id="Keywords" name="keywords">
+						  </div>
+						  
+						  <div class="form-group">
+						    <label for="Region">Region</label>
+							<select class="form-control input-sm" name="region">
+							  <option>---</option>
+							</select>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="Region">Sector</label>
+							<select class="form-control input-sm" name="region">
+							  <option>---</option>
+							</select>
+						  </div>
+
+						  <div class="form-group">
+						    <label for="Region">Job Type</label>
+							<select class="form-control input-sm" name="region">
+							  <option>---</option>
+							</select>
+						  </div>
+
+						  <button type="submit" class="btn btn-cssgrey">Search</button>
+						</form>
+				  	</div>
+				  
+				  </div>
+				  
+			  </div>
+
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+				{embed="includes/inc_expertise_menu"}
+			  	{embed="includes/inc_job_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

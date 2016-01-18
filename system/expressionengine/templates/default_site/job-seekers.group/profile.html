@@ -1,0 +1,151 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+				  		<h1 class="head-cssgreen">{screen_name}</h1>
+				  		{exp:zoo_visitor:details}
+				  		{if synopsis != ""}
+				  		<p class="lead">{synopsis}</p>
+				  		{if:else}
+				  		<div class="alert alert-info">
+				  			It appears you don't have a synopsis. Why not tell us a little about yourself? <a href="{path='job-seekers/profile-edit'}">Update profile</a>
+				  		</div>
+				  		{/if}
+
+				  		<div class="row">
+				  			<div class="col-xs-6"> 
+				  				<h3>Contact info:</h3>
+
+				  				{if hide_contact_details != "Yes"}
+					  				{if address_line_1 != "" }{address_line_1}<br/>{/if}
+					  				{if address_line_2 != "" }{address_line_2}<br/>{/if}
+					  				{if town_city != "" }{town_city}<br/>{/if}
+					  				{if county_region != "" }{county_region}<br/>{/if}
+					  				{if post_zip_code != "" }{post_zip_code}<br/>{/if}
+					  				{if country != "" }{country}{/if}
+
+					  				{if home_phone && mobile_number != ""}
+						  				<h4>Contact Numbers</h4>
+						  				{if home_phone != "" }<strong>Tel:</strong> {home_phone}{/if}
+						  				{if mobile_number != "" }<strong>Mob:</strong> {mobile_number}{/if}
+					  				{/if}
+
+				  				{if:else}
+				  				<p>User has choosen to hide details</p>
+
+				  				{/if}
+				  				<br/><br/>
+				  				{email}
+
+
+				  			</div>
+				  			<div class="col-xs-6">
+				  				<h3>Employment Status:</h3>
+				  				<table class="table">
+				  					{if nationality != "" }
+				  					<tr>
+				  						<td>Nationality</td>
+				  						<td align="right">{nationality}</td>
+				  					</tr>
+				  					{/if}
+				  					<tr>
+				  						<td>Eligible to work in UK</td>
+				  						<td align="right">{if eligible_to_work_in_uk == "Yes" }<span style="color: green;" class="glyphicon glyphicon-ok"></span>{if:else}<span style="color: red;" class="glyphicon glyphicon-remove"></span>{/if}</td>
+				  					</tr>
+				  					<tr>
+				  						<td>Are you willing to relocate</td>
+				  						<td align="right">{if are_you_willing_to_relocate == "Yes" }<span style="color: green;" class="glyphicon glyphicon-ok"></span>{if:else}<span style="color: red;" class="glyphicon glyphicon-remove"></span>{/if}</td>
+				  					</tr>
+				  					<tr>
+				  						<td>Do you hold a valid Driving Licence</td>
+				  						<td align="right">{if driving_licence == "Yes" }<span style="color: green;" class="glyphicon glyphicon-ok"></span>{if:else}<span style="color: red;" class="glyphicon glyphicon-remove"></span>{/if}</td>
+				  					</tr>
+				  					<tr>
+				  						<td>Own transport</td>
+				  						<td align="right">{if own_transport == "Yes" }<span style="color: green;" class="glyphicon glyphicon-ok"></span>{if:else}<span style="color: red;" class="glyphicon glyphicon-remove"></span>{/if}</td>
+				  					</tr>
+				  					<tr>
+				  						<td>Preferred contract type</td>
+				  						<td align="right">{contract_type}</td>
+				  					</tr>
+				  				</table>
+
+  							</div>
+  						</div>
+  						{/exp:zoo_visitor:details}
+
+
+					  	{exp:zoo_visitor:details}
+  						<hr/>
+  						<p class="sub-head">Preferred industries</p>
+					  	{categories category_id="1"}
+						  	<p>{category_name}</p>
+						{/categories}
+
+				  		<hr/>
+						<p class="sub-head">Your Current CV<p>
+
+					  	{if user_cv != ""}
+					  		<table class="table">
+					  			<tr>
+					  				<td><?php $cv = explode('/', '{user_cv}'); echo array_pop($cv); ?></td>
+					  			</tr>
+					  		</table>
+					  	{if:else}
+					  		<div class="alert alert-info">
+					  			It appears you don't have a CV. Why not upload one? <a href="{path='job-seekers/upload-cv'}">Upload CV</a>
+					  		</div>
+					  	{/if}
+					  	{/exp:zoo_visitor:details}
+
+						<hr />
+				  		<p class="sub-head">Latest job applications<p>
+
+				  		
+				  		{exp:job_seekers:job_app_list limit="5"}
+				  			<tr>
+				  				<td>
+				  					<a href="{path='job-seekers/view/{url_title}'}">{title}</a>
+				  				</td>
+				  				<td align="right">
+				  					{date_applied format="%d %F, %Y"}
+				  				</td>
+				  			</tr>
+				  			{if no_results}
+				  			<div class="alert alert-info">No job applications yet</div>
+				  			{/if}
+				  		{/exp:job_seekers:job_app_list}
+
+				  </div>
+				  <div class="col-xs-3 column-padding">
+
+				  	{embed="includes/inc_job_seekers_menu"}
+				  </div>
+				  
+			  </div>
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+			  {embed="includes/inc_expertise_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

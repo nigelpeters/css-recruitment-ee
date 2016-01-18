@@ -1,0 +1,868 @@
+/* -----------------------------------------------------------------------
+
+	Acumen Design Website Styles
+	Copyright 2012 Nigel Peters
+	Designed and built with all the love in the world @nutyga
+
+----------------------------------------------------------------------- */
+
+/* Varibles
+-------------------------------------------------------------- */
+
+@cssgreen: #DEDC00;
+@csscyan: #3FBFAD;
+@csspink: #E6007E;
+@cssdkpink: #AD005F;
+@cssdkcyan: #2F8F82;
+@cssdkgreen: #A7A500;
+@csslgreen: #F3F1B2;
+@csslcyan: #BCE6DD;
+@csslpink: #FADCEB;
+@cssgrey: #706F6F;
+@csslgrey: #DADADA;
+
+@dkgrey: #58585A;
+@lgrey: #F5F5F6;
+
+// Buttons
+// -------------------------
+
+@btn-font-weight:                normal;
+
+@btn-cssgrey-color:		#fff;
+@btn-cssgrey-bg:		@cssgrey;
+@btn-cssgrey-border:	darken(@btn-cssgrey-bg, 5%);
+
+@btn-cssgreen-color:	@cssgrey;
+@btn-cssgreen-bg:		@cssgreen;
+@btn-cssgreen-border:	darken(@btn-cssgreen-bg, 5%);
+
+@btn-cssdkgreen-color:	@cssgrey;
+@btn-cssdkgreen-bg:		@cssdkgreen;
+@btn-cssdkgreen-border:	darken(@btn-cssdkgreen-bg, 5%);
+
+@btn-csslgreen-color:	@cssgrey;
+@btn-csslgreen-bg:		@csslgreen;
+@btn-csslgreen-border:	darken(@btn-csslgreen-bg, 5%);
+
+@btn-csscyan-color:		#fff;
+@btn-csscyan-bg:		@csscyan;
+@btn-csscyan-border:	darken(@btn-csscyan-bg, 5%);
+
+@btn-csspink-color:		#fff;
+@btn-csspink-bg:		@csspink;
+@btn-csspink-border:	darken(@btn-csspink-bg, 5%);
+
+
+/* Universal Styles
+-------------------------------------------------------------- */
+
+body{
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Arial, sans-serif;
+	color: @cssgrey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Arial, sans-serif;
+}
+
+a{
+	color: @csscyan;
+	&:hover{
+		
+	}
+}
+
+img,video,audio,iframe,object{
+	max-width:100%;
+}
+
+.sub-head, legend{
+	font-size: 12px;
+	font-weight: bold;
+	color: #bbb;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.column-padding{
+	padding-top: 20px;
+}
+
+.container{
+	padding-left: 30px;
+	padding-right: 30px;
+	width: 1170px !important;
+}
+
+.well {
+	min-height: 20px;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-image: none;
+	background: transparent;
+	background-color: @csslgrey;
+	border: none;
+	border-radius: 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	filter: none;
+	
+	h2{
+		padding: 0px;
+		margin: 0px;
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+	
+	ul{
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		
+		li{
+			font-size: 13px;
+			padding: 5px 0;
+			border-top: 1px dashed @dkgrey;
+						
+			a{
+				color: @cssgrey;
+			}
+		}
+	}
+}
+
+.well-expertise {
+	min-height: 20px;
+	padding: 0px;
+	padding-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-image: none;
+	background-color: @csslgrey;
+	border: none;
+	border-radius: 4px;
+	
+	h2{
+		padding: 10px 10px 0 10px;
+		margin: 0px;
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+	
+	ul{
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		li{
+			font-size: 13px;
+			margin-right: 10px;
+						
+			&.active{
+				background-color: #FFFFFF;
+			}
+			
+			a{
+				color: @cssgrey;
+				border-top: 1px dashed @dkgrey;
+				padding: 5px 0 5px 0px;
+				display: block;
+				margin-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+
+.head-cssgreen{
+	color: @cssgreen;
+}
+
+.head-csspink{
+	color: @csspink;
+}
+
+.head-csscyan{
+	color: @csscyan;
+}
+
+.well-cssgreen{
+	background-color: @csslgreen;
+}
+
+.well-csspink{
+	background-color: @csslpink;
+}
+
+.well-csscyan{
+	background-color: @csslcyan;
+}
+
+.well-csslgrey{
+	background-color: @lgrey;
+}
+
+.col-xs-8, .col-xs-4, .col-xs-3{
+	img:first-child{
+		margin-top: 20px;
+	}
+}
+
+blockquote {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	
+	p{
+		font-size: 15px;
+		font-style: italic;
+	}
+	
+	small{
+		margin-top: 8px;
+		font-size: 13px;
+	}
+	
+	small::before{
+		content: none;
+	} 
+}
+
+[class*="icon-"] {
+    display: inline-block;
+}
+
+.lead{
+	font-size: 18px;
+	margin-bottom: 0;
+}
+
+// Button variants
+// -------------------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+.btn{
+	border: none;
+	text-align: left;
+}
+
+.btn-block{
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	.glyphicon{
+		right: 0px;
+		top: 3px;
+	}
+}
+
+.btn-group-justified{
+	a.btn-cssgreen:first-child{
+		border-right: 1px solid @csslgreen;
+	}
+
+	a.btn-csspink:first-child{
+		border-right: 1px solid @csslpink;
+	}
+
+	a.btn-csscyan:first-child{
+		border-right: 1px solid @csslcyan;
+	}
+
+	a.btn-cssgrey:first-child{
+		border-right: 1px solid @lgrey;
+	}
+}
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 8%);
+    border-color: darken(@border, 12%);
+  }
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+}
+
+.btn-cssgrey {
+	.button-variant(@btn-cssgrey-color; @btn-cssgrey-bg; @btn-cssgrey-border)
+}
+
+.btn-cssgreen {
+	.button-variant(@btn-cssgreen-color; @btn-cssgreen-bg; @btn-cssgreen-border)
+}
+
+.btn-cssdkgreen {
+	.button-variant(@btn-cssdkgreen-color; @btn-cssdkgreen-bg; @btn-cssdkgreen-border)
+}
+
+.btn-csslgreen {
+	.button-variant(@btn-csslgreen-color; @btn-csslgreen-bg; @btn-csslgreen-border)
+}
+
+.btn-csscyan {
+	.button-variant(@btn-csscyan-color; @btn-csscyan-bg; @btn-csscyan-border)
+}
+
+.btn-csspink {
+	.button-variant(@btn-csspink-color; @btn-csspink-bg; @btn-csspink-border)
+}
+
+/* Cookie Consent
+-------------------------------------------------------------- */
+
+.cookie-consent{
+	padding: 10px;
+	background-color: @csslgrey;
+}
+			
+
+/* Main Nav Bar
+-------------------------------------------------------------- */
+
+.navbar{
+	min-height: 35px;
+	margin-bottom: 0px;
+
+	.divider-vertical {
+	  height: 13px;
+	  margin: 0 9px;
+	  margin-top: 15px;
+	  border-right: 1px solid #ffffff;
+	}
+
+}
+
+.navbar-default {
+	background-image: none;
+    background-color: @dkgrey;
+    border: none;
+    box-shadow: none;
+        
+    .navbar-nav > li > a{
+	    text-shadow: none;
+	    color: #FFFFFF;
+	    padding: 13px 0 0 0;
+	    font-weight: bold;
+	    
+	    &:hover{
+		    color: @csslgrey;
+	    }
+
+	    &.cssgreenactive{
+			color: @cssgreen;
+	    }	    
+	    
+	    &.csspinkactive{
+		    color: @csspink;
+	    }
+	    
+	    &.csscyanactive{
+			color: @csscyan;
+	    }
+
+	    &.cssgreyactive{
+		   color: @cssgrey;
+	    }
+	    
+	}
+
+	.navbar-nav > .active > a,
+	.navbar-nav > .active > a:hover,
+	.navbar-nav > .active > a:focus{
+		background-image: none;
+		background-color: transparent;
+		color: @cssgreen;
+	}
+
+}
+
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.navbar-nav > li {
+  float: left;
+}
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-left {
+  float: left !important;
+}
+.navbar-right {
+  float: right !important;
+}
+
+
+/* Header bar
+-------------------------------------------------------------- */
+
+header{
+
+	&.home{
+		background-color: @csslcyan;
+		
+		.container{
+			background-image: url('../img/img-css-homepage.jpg');
+			height: 450px;
+			padding-top: 20px;
+			position: relative;
+			display: block;
+			
+			.homebuts{
+			
+				position: absolute;
+				bottom: 60px;
+				
+				.btn{
+					position: relative;
+					padding-right: 50px;
+					margin-right: 10px;
+					font-weight: bold;
+				}			
+							
+				// Was HERE!!!
+				.btn-csscyan {
+				  color: #ffffff;
+	
+					[class*="icon-"] {
+						color: @csscyan;
+						position: absolute;
+						right: 10px;
+						top: 10px;
+					}
+				
+					&:hover [class*="icon-"]{
+						color: #FFFFFF;
+					}
+				}
+				
+				.btn-cssgreen {
+				  color: #ffffff;
+	
+					[class*="icon-"] {
+						color: @cssgreen;
+						position: absolute;
+						right: 10px;
+						top: 10px;
+					}
+				
+					&:hover [class*="icon-"]{
+						color: #FFFFFF;
+					}
+				}
+	
+				.btn-csspink {
+				  color: #ffffff;
+	
+					[class*="icon-"] {
+						color: @csspink;
+						position: absolute;
+						right: 10px;
+						top: 10px;
+					}
+				
+					&:hover [class*="icon-"]{
+						color: #FFFFFF;
+					}
+				}
+
+
+			}
+		}
+	}
+	
+	&.internal{
+		background-color: @cssgrey;
+		
+		.container{
+			padding-top: 22px;
+			padding-bottom: 22px;
+			
+			p{
+				color: #FFFFFF;
+				font-size: 16px;
+				font-weight: bold;
+				margin-top: 34px;
+			}
+		}		
+	}
+
+}
+
+/* Secondary Nav
+-------------------------------------------------------------- */
+
+.second-level-menu(@border; @linkcolor; @bgcolor){
+	
+	border-top: @border 5px solid;
+
+	.nav{
+	
+		li{
+			float: left;
+			
+			a{
+				color: @linkcolor;
+				padding: 5px 10px;
+				
+				&:hover, &.active{
+					background-color: @bgcolor;
+				}
+			}
+		}
+	}
+
+}
+
+.second-level-green{
+	.second-level-menu(@cssgreen; @cssgrey; @cssgreen)
+}
+
+.second-level-pink{
+	.second-level-menu(@csspink; @cssgrey; @csspink)
+}
+
+.second-level-cyan{
+	.second-level-menu(@csscyan; @cssgrey; @csscyan)
+}
+
+.second-level-grey{
+	.second-level-menu(@csslgrey; @dkgrey; @csslgrey)
+}
+
+.second-level-pink > .no-nav, .second-level-green > .no-nav, .second-level-cyan > .no-nav, .second-level-grey > .no-nav{
+	padding: 0px;
+	li{
+		list-style-type: none;
+	}
+}
+
+/* Article Listings
+-------------------------------------------------- */
+
+.article-listing{
+	
+	border-top: 1px dotted @csslgrey;
+	padding: 20px 0 20px 0;
+	margin-right: 20px;
+	
+	h2{
+		margin: 0 0 10px 0;
+		padding: 0px;
+		font-size: 24px;
+		
+		a{
+			color: @cssgrey;
+		}
+	}
+	
+}
+
+.blog-listing{
+	
+	border-bottom: 1px dotted @csslgrey;
+	padding: 20px 0 20px 0;
+	margin-right: 20px;
+	
+	h2{
+		margin: 0 0 10px 0;
+		padding: 0px;
+		font-size: 24px;
+		
+		a{
+			color: @cssgrey;
+		}
+	}
+	
+}
+
+
+.well .blog-listing{
+
+	padding: 0 0 10px 0;
+	margin: 0px;
+	margin-bottom: 20px;
+	
+	h2{
+		font-size: 20px;
+	}
+	
+	&:last-child{
+		border-bottom: none;
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+.csspagination(@color; @active; @hover){
+
+	a {
+		color: @color;
+	}
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      background-color: @hover;
+      color: @cssgrey
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: #fff;
+      background-color: @active;
+      border-color: @active;
+      cursor: default;
+    }
+  }
+	
+}
+
+.csspagigreen{
+	.csspagination(@cssgreen; @cssdkgreen; @csslgreen);
+}
+
+.csspagipink{
+	.csspagination(@csspink; @cssdkpink; @csslpink);
+}
+
+.csspagicyan{
+	.csspagination(@csscyan; @cssdkcyan; @csslcyan);
+}
+
+.csspagigrey{
+	.csspagination(@cssgrey; @dkgrey; @csslgrey);
+}
+
+article{
+	img{
+		margin-bottom: 10px;
+		
+		&.pull-right{
+			margin-left: 10px;
+		}
+		
+		&.pull-left{
+			margin-right: 10px;
+		}
+	}
+}
+
+.twitter-share-button{
+	padding: 0px;
+	margin-left: 10px !important;
+	width: 80px !important;	
+}
+
+/* Job Listing Page
+-------------------------------------------------- */
+
+.back-link{
+	margin-top: 20px;
+	a{
+		color: @cssgrey;
+	}
+}
+
+.table{
+	tbody > tr:first-child > td{
+		border: none;
+	}
+
+	tbody > tr > td{
+		padding-left: 0;
+		padding-right: 0;	
+	}
+}
+
+
+ul.wysihtml5-toolbar > li > .btn-group > .btn, ul.wysihtml5-toolbar > li > .btn{
+
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-color: #F5F5F5;
+	background-image: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6);
+	background-repeat: repeat-x;
+	border-color: #CCCCCC #CCCCCC #B3B3B3;
+	border-image: none;
+	border-radius: 4px;
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+	color: #333333;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 18px;
+	margin-bottom: 0;
+	padding: 4px 10px;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+}
+
+.eeform{
+	margin-top: 10px;
+}
+
+/* Team Members
+-------------------------------------------------- */
+
+.team-member{
+	
+	position: relative;
+	margin-bottom: 20px;
+	
+	h2{
+		font-size: 18px;
+		margin: 0 0 5px 0;
+	}
+	
+	.tm-info {
+
+		p{
+			margin: 0px;
+			padding: 0px;
+			line-height: 18px;
+			font-size: 85%;
+			
+			&:first-child{
+				margin-top: 22px;
+			}
+		}
+	}
+	
+	.team-profile-pic{
+		float: left;
+		width: 100%;
+		position: relative;
+		height: 120px;
+		
+		.big-pic{
+			position: absolute;
+			
+		}
+		
+		.small-pic{
+			position: absolute;
+			left: 90px;
+			top: 45px;
+		}
+		
+		
+	}
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+  width: 1172px;
+  border-left: 1px solid @csslgrey;
+  border-right: 1px solid @csslgrey;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: @dkgrey;
+  margin: 0px auto;
+  width: 1172px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+/*
+#wrap > .home {
+  padding: 35px 15px 0;
+}
+*/
+
+footer{
+	.navbar-default{
+		background-image: none;
+		background: transparent;
+		/* background-color: @cssgrey; */
+		box-shadow: none;
+		border: none;
+		filter: none;
+	}
+}
+
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+  }
+
+code {
+  font-size: 80%;
+}

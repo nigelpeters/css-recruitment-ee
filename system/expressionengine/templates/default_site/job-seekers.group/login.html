@@ -1,0 +1,87 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+				  		<h1 class="head-cssgreen">Login to your profile</h1>
+
+						<p>Log in here for access to your personal Candidate area where you can:</p>
+												
+						<ul>
+						    <li>Upload your CV so that Recruiters can find you</li>
+						    <li>Review your previous job applications</li>
+						</ul>
+
+				  </div>
+			  </div>
+
+		  <!-- FORM -->
+		  <div class="well well-csslgrey">
+		  <h2 class="head-cssgreen">Candidate Login</h2>
+			
+		  {exp:zoo_visitor:login_form class="form-horizontal" return="{path=job-seekers/redirect}" error_handling="inline" error_delimiters='<div class="alert alert-danger">|</div>'}
+			{error:login}			
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3">Username</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="username" name="username" placeholder="Username" />
+
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="password" class="col-sm-3">Password</label>
+			    <div class="col-sm-9">
+			      <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+
+			    </div>
+			  </div>
+
+			  {if auto_login}
+			  <div class="form-group">
+				<div class="col-sm-offset-3 col-sm-9">
+				<div class="checkbox">
+				  <label>
+				     Auto-login on future visits <input type="checkbox" name="auto_login" value="1" />
+				  </label>
+				</div>
+				</div>
+			  </div>
+			 {/if}
+			  
+			  <div class="form-group">
+			    <div class="col-sm-12">
+			      <button type="submit" class="btn btn-cssgreen pull-right">Login</button>
+			    </div>
+			  </div>
+			  
+			{/exp:zoo_visitor:login_form}
+		  
+		  <p>If you have forgotten your password, please visit the <a href="{path='job-seekers/forgot-pw'}">forgotten password</a> page to have it reset.</p>
+		  </div>
+
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+			  {embed="includes/inc_expertise_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

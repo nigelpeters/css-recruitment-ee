@@ -1,0 +1,90 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+
+				  	{exp:channel:entries channel="css_job_postings"}
+
+				  	<h1 class="head-cssgreen">Online application form</h1>
+				  	<p class="lead">Application for the position: {title}</p>
+				  	<p>Below is the cover letter that will be sent through to our team member. Please feel free to tailor this to your needs. You can save a synopsis in your account profile for future use.</p>
+				  	<hr/>
+					  		{exp:job_seekers:job_app_form job_id="{entry_id}" job_contact="{author_id}"}
+				  	{/exp:channel:entries}
+				  	
+				  			{exp:zoo_visitor:details}
+				  				Regards<br/>{member_firstname} {member_lastname}
+				  			{/exp:zoo_visitor:details}
+				  		</textarea>
+
+				  	</div>
+				  	<div class="form-group">
+				  	  <div class="col-sm-12">
+				  	    <button type="submit" class="btn btn-cssgreen pull-right">Send Application</button>
+				  	  </div>
+				  	</div>
+					</form>
+
+					{exp:zoo_visitor:details}
+					{if user_cv}
+					{user_cv}
+						{file_name}
+					{/user_cv}
+					{if:else}
+						<hr/>
+						You have not uploaded a CV. If you wish to do so now you can upload one now which will be saved under your profile for future applications.
+						  		{exp:job_seekers:load_cv_form}
+						  		<div class="form-group">
+							  		<span class="btn btn-success fileinput-button">
+							  			<i class="glyphicon glyphicon-plus"></i>
+							  			<span>Select file...</span>
+							  			<input type="hidden" name="entry_id" value="{entry_id}">
+							  			<input type="hidden" name="member_cv" value="{user_cv}">
+							  			<input type="file" name="userfile" >
+							  		</span>
+						  		</form>
+						  		<br>
+						  		<br>
+						  		<div class="progress" id="progress">
+						  		    <div class="progress-bar progress-bar-success"></div>
+						  		</div>
+
+						  		<div id="file"></div>
+						  	</div>
+					{/if}
+					{/exp:zoo_visitor:details}
+
+				  
+
+				  </div>
+
+			  </div>
+
+		  <!-- FORM -->
+
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+				{embed="includes/inc_expertise_menu"}
+			  	{embed="includes/inc_job_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

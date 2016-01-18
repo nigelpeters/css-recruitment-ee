@@ -1,0 +1,56 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+				  		<h1 class="head-cssgreen">Hello {screen_name}</h1>
+
+						<p>Below is a list of the the latest job applications</p>
+
+				  		{exp:job_seekers:list_job_apps}
+				  			<tr>
+				  				<td>
+				  					<a href="{path='job-seekers/view/{url_title}'}">{title}</a>
+				  				</td>
+				  				<td>
+				  					<a href="{path='job-staff/profile/{member_id}'}">{jobseeker}</a>
+				  				</td>
+				  				<td align="right">
+				  					{date_applied format="%d %F, %Y"}
+				  				</td>
+				  			</tr>
+				  			{if no_results}<div class="alert alert-success">Sorry, no new applications</div>{/if}
+				  		{/exp:job_seekers:list_job_apps}
+
+				  </div>
+				  <div class="col-xs-3 column-padding">
+
+				  	{embed="includes/inc_job_staff_menu"}
+				  </div>
+				  
+			  </div>
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+			  {embed="includes/inc_expertise_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

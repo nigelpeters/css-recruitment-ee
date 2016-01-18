@@ -1,0 +1,112 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+					{exp:channel:entries status="open"}
+				  		<h1 class="head-cssgreen">{title}</h1>
+				  		{content}
+					{/exp:channel:entries}
+				  </div>
+			  </div>
+
+		  <!-- FORM -->
+
+		  <div class="well well-csslgrey">
+		  <h2 class="head-cssgreen">Search jobs</h2>
+			
+		  {exp:job_seekers:job_search_form class="form-horizontal"}
+			
+			  <div class="form-group">
+			    <label for="title" class="col-sm-3">Search by keywords</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="keywords" name="title" placeholder="Keywords">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label for="sector" class="col-sm-3">Search by sector</label>
+			    <div class="col-sm-9">
+			    	<select name="sector" class="form-control">
+			    	        <option value="">Select Industry</option>
+			    	        {exp:channel:categories channel="css_job_postings" style="linear"}
+			    	            <option value="{category_id}">{category_name}</option>
+			    	        {/exp:channel:categories}
+		    	    </select>
+
+			    </div>
+			  </div>
+						
+			  <div class="form-group">
+			    <label for="contract" class="col-sm-3">Search by job type</label>
+			    <div class="col-sm-9">
+			    	{exp:job_seekers:contractlist}
+			    </div>
+			  </div>
+			
+			  <div class="form-group">
+			    <label for="region" class="col-sm-3">Search by region</label>
+			    <div class="col-sm-9">
+			    	{exp:job_seekers:regionlist}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="salary_min" class="col-sm-3">Minimum salary per annum</label>
+			    <div class="col-sm-9">
+			    	<input name="salary_min" class="form-control" type="text" />
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="region" class="col-sm-3">Maximum salary per annum</label>
+			    <div class="col-sm-9">
+			   		<input name="salary_max" class="form-control" type="text" />
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-12">
+			    	<input type="hidden" name="process" value="1" />
+			    	<button type="submit" class="btn btn-cssgreen pull-right">Search</button>
+			    </div>
+			  </div>
+			  
+			  {/exp:job_seekers:job_search_form}
+<!--
+ 		  <hr/>
+		  <div class="row">
+		  	<div class="col-xs-10">
+		  		<p>If any of your friends or colleagues are looking for a new job and you think they would  benefit from knowing about CSS People please let them know about our services.</p>
+		  	</div>
+		  	<div class="col-xs-2">
+		  		<a class="btn btn-cssgrey pull-right" href="#">Forward</a>
+		  	</div>
+		  </div>
+ -->		  
+		  </div>
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+				{embed="includes/inc_expertise_menu"}
+			  	{embed="includes/inc_job_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

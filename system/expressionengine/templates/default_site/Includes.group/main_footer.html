@@ -1,0 +1,104 @@
+    <footer id="footer">
+      <div class="container">
+		  <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Copyright 2013 &copy;</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="{path='terms-and-conditions'}">Terms &amp; conditions</a></li>
+                <li class="divider-vertical"></li>
+                <li><a class="active" href="{path='privacy-policy'}">Privacy policy</a></li>
+            </ul>
+		</nav>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{site_url}js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script src="{site_url}js/vendor/bootstrap.min.js"></script>
+
+    <script src="{site_url}js/main.js"></script>
+
+    <script src="{site_url}js/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="{site_url}js/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="{site_url}js/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script>
+    /*jslint unparam: true */
+    /*global window, $ */
+    $(function () {
+        'use strict';
+        // Change this to the location of your server-side upload handler:
+        var url = '{site_url}index.php';
+
+        $('#fileupload').fileupload({
+            acceptFileTypes: /(\.|\/)(pdf|doc|txt|rtf|docx)$/i,
+            url: url,
+            dataType: 'json',
+            done: function (e, data) {
+                $.each(data.result.files, function (index, file) {
+                                if(file.error){
+                                    $('<div class="alert alert-danger"></div>').text(file.error).appendTo('#file');
+                                } else {
+                                    alert('file uploaded!');
+                                    location.reload();
+                                }
+                            });
+            },
+            progressall: function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $( "#file" ).empty();
+                $('#progress .progress-bar').css(
+                    'width',
+                    progress + '%'
+                );
+            }
+        }).prop('disabled', !$.support.fileInput)
+            .parent().addClass($.support.fileInput ? undefined : 'disabled');
+    });
+    </script>
+
+    <script src="{site_url}js/wysihtml5/js/wysihtml5-0.3.0.js"></script>
+    <script src="{site_url}js/wysihtml5/js/prettify.js"></script>
+    <script src="{site_url}js/wysihtml5/js/bootstrap-wysihtml5.js"></script>
+    <script>
+        $('#application_message, #synopsis').wysihtml5({
+            "font-styles": false, //Font styling, e.g. h1, h2, etc. Default true
+            "emphasis": true, //Italics, bold, etc. Default true
+            "lists": false, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+            "html": false, //Button which allows you to edit the generated HTML. Default false
+            "link": false, //Button to insert a link. Default true
+            "image": false, //Button to insert an image. Default true,
+            "color": false //Button to change color of font  
+        });
+    </script>
+
+    <script src="{site_url}js/datepicker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#member_birthday').datepicker({
+                format: 'yyyy-mm-dd'
+            })
+        });    
+    </script>
+
+    
+    <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='//www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+	<script>
+		$(document).ready(function(){
+			$("[data-toggle='tooltip']").tooltip({
+				placement: 'bottom'
+			});
+		});
+	</script>
+  </body>
+</html>

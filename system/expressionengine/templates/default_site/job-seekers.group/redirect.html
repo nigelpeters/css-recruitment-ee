@@ -1,0 +1,18 @@
+  <?php
+		//global $SESS;
+		// Find the last page visited from the tracker array
+		$last_page = str_replace('','',$this->EE->session->tracker['2']);
+
+	?>
+
+{if member_group == "1" || member_group == "7"}
+	{redirect="job-staff/"}
+{/if}
+
+{if member_group == "6"}
+	{redirect="job-seekers/profile"}
+{/if}
+
+{if member_group == "8"}
+	{redirect="training/downloads"}
+{/if}

@@ -1,0 +1,28 @@
+
+#seed_container .success
+{
+	padding : 10px; 
+}
+
+#seed_container .notice
+{
+	padding : 10px;
+	border : 1px solid #D91350; 
+	margin-bottom : 10px; 
+}
+
+
+#seed_container .notice.s
+{
+	padding : 10px;
+	border : 1px solid #D91350; 
+	margin-bottom : 10px; 
+}
+
+#seed_container .notice li
+{	
+	margin-left : 20px;
+	list-style-type: circle;
+}
+
+#seed_container .help_text { font-size : 12px; font-weight : normal; display : block; }

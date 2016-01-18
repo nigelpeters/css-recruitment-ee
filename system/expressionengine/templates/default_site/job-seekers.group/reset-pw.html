@@ -1,0 +1,72 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+<!-- Begin page content -->
+<header class="internal">
+	<div class="container">
+		<p class="pull-right">Experts in people</p>
+		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	</div>
+</header>
+{embed="green_pages/green_sub_menu"}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="row">
+				<div class="col-xs-9">
+					<h1 class="head-cssgreen">Reset your password?</h1>
+
+					<p>Please fill out the form below to reset your password.</p>
+
+				</div>
+			</div>
+
+			<!-- FORM -->
+			<div class="well well-csslgrey">
+
+				{exp:zoo_visitor:reset_password error_handling="inline" form_class="form-horizontal"}
+				{if password_reset}
+				<h3>Your password has been reset. You can now login with your new password</h3>
+				{if:else}
+
+				<div class="form-group">
+					<label for="email" class="col-sm-3">Password:</label>
+					<div class="col-sm-9">
+						<input type="password" name="password" id="password" class="form-control" value="" />
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="email" class="col-sm-3">Confirm Password:</label>
+					<div class="col-sm-9">
+						<input type="password" name="password_confirm" id="password_confirm" class="form-control" value="" />
+
+					</div>
+				</div>
+
+				{error:password}
+				<div class="form-group">
+					<div class="col-sm-12">
+						<input type="submit" value="Reset your password" class="btn btn-cssgreen pull-right" />
+					</div>
+				</div>
+				{/if}
+				{/exp:zoo_visitor:reset_password}
+
+			</div>
+
+
+			<!-- Right Column -->
+		</div>
+		<div class="col-xs-3">
+			{embed="includes/inc_job_menu"}
+			{embed="includes/inc_expertise_menu"}
+		</div>
+	</div>
+</div>
+</div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

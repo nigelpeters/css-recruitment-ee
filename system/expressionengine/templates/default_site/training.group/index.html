@@ -1,0 +1,52 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+<!-- Begin page content -->
+<header class="internal">
+	<div class="container">
+		<p class="pull-right">Experts in people</p>
+		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	</div>
+</header>
+{embed="pink_pages/pink_sub_menu"}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="row">
+				<div class="col-xs-9">
+					{exp:channel:entries}
+					<h1 class="head-csspink">{title}</h1>
+					{content}
+					<br/><br/>
+					{/exp:channel:entries}
+
+					{exp:channel:entries dynamic="no" status="open" channel="training_courses" order_by="title" sort="asc"}
+					<article class="article-listing">
+						<h2><a href="{title_permalink='training/view'}">{title}</a></h2>
+						
+						<div class="row">
+							<div class="col-xs-8">
+								<p><strong>Duration: </strong>{course_duration}</p>
+							</div>
+							<div class="col-xs-4">
+								<a href="{title_permalink='training/view'}" class="btn btn-csspink btn-xs pull-right">Details</a>
+							</div>
+						</div>
+					</article>
+					{/exp:channel:entries}
+				</div>
+			</div>
+
+			<!-- Right Column -->
+		</div>
+		<div class="col-xs-3">
+			{embed="includes/inc_expertise_menu"}
+			{embed="includes/inc_training_menu"}
+		</div>
+	</div>
+</div>
+</div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

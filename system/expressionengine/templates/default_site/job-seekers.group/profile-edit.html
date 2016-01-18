@@ -1,0 +1,302 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+<!-- Begin page content -->
+<header class="internal">
+	<div class="container">
+		<p class="pull-right">Experts in people</p>
+		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	</div>
+</header>
+{embed="green_pages/green_sub_menu"}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="row">
+				<div class="col-xs-9">
+					<h1 class="head-cssgreen">Update your profile</h1>
+
+					{exp:zoo_visitor:update_form class="form-horizontal" return="job-seekers/profile-edit" preserve_checkboxes="yes" error_delimiters='<div class="alert alert-danger">|</div>'}
+
+					<fieldset>
+						<legend>Personal Information:</legend>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Firstname</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="member_firstname" name="member_firstname" placeholder="Firstname" value="{member_firstname}" />
+								{error:member_firstname}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Lastname</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="member_lastname" name="member_lastname" placeholder="Lastname" value="{member_lastname}" />
+								{error:member_lastname}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Birthday</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="member_birthday" name="member_birthday" placeholder="Birthday" value="{member_birthday}" />
+								{error:member_birthday}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Synopsis</label>
+							<div class="col-sm-9">
+								<textarea id='synopsis' class='form-control' rows='15' name='synopsis'>{synopsis}</textarea>
+								{error:synopsis}
+							</div>
+						</div>
+
+					</fieldset>
+
+					<fieldset>
+						<legend>Contact Details:</legend>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Address line 1</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="address_line_1" name="address_line_1" placeholder="Address line 1" value="{address_line_1}" />
+								{error:address_line_1}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Address line 2</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="address_line_2" name="address_line_2" placeholder="Address line 2" value="{address_line_2}" />
+								{error:address_line_2}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Town/City</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="town_city" name="town_city" placeholder="Town/City" value="{town_city}" />
+								{error:town_city}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">County/Region</label>
+							<div class="col-sm-9">
+								{exp:css_helpers:regionlist county_region="{county_region}"}
+								{error:county_region}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Post/Zip code</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="post_zip_code" name="post_zip_code" placeholder="Post/Zip code" value="{post_zip_code}" />
+								{error:post_zip_code}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Country of Residence</label>
+							<div class="col-sm-9">
+								{exp:css_helpers:countrylist country="{country}"}
+								{error:country}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Hide contact details</label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+								  <label>
+								    {options:hide_contact_details}
+								    <input type="checkbox" id="hide_contact_details" name="hide_contact_details[]" value="{option_value}"{checked} />
+								    {/options:hide_contact_details}
+
+								    You have the option to remain anonymous to Recruiters. Simply check this box and ensure the CV you upload and the optional cover letter only has your email address as a method of contacting you.
+								  </label>
+								</div>
+								{error:hide_contact_details}
+							</div>
+						</div>
+
+					</fieldset>
+
+					<fieldset>
+						<legend>Employment Status:</legend>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Nationality</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="nationality" name="nationality" placeholder="nationality" value="{nationality}" />
+								{error:nationality}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Eligible to work in UK</label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+								  <label>
+								    {options:eligible_to_work_in_uk}
+								    <input type="checkbox" id="eligible_to_work_in_uk" name="eligible_to_work_in_uk[]" value="{option_value}"{checked} />
+								    {/options:eligible_to_work_in_uk}
+								    Please tick if you are eligible to work in the UK
+								  </label>
+								</div>
+								{error:eligible_to_work_in_uk}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Are you willing to relocate?</label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+								  <label>
+								    {options:are_you_willing_to_relocate}
+								    <input type="checkbox" id="are_you_willing_to_relocate" name="are_you_willing_to_relocate[]" value="{option_value}"{checked} />
+								    {/options:are_you_willing_to_relocate}
+								    Please tick if yes
+								  </label>
+								</div>
+								{error:are_you_willing_to_relocate}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Driving licence</label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+								  <label>
+								    {options:driving_licence}
+								    <input type="checkbox" id="driving_licence" name="driving_licence[]" value="{option_value}"{checked} />
+								    {/options:driving_licence}
+								    Please tick if you hold a valid Driving Licence
+								  </label>
+								</div>
+								{error:driving_licence}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Own transport</label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+								  <label>
+								    {options:own_transport}
+								    <input type="checkbox" id="own_transport" name="own_transport[]" value="{option_value}"{checked} />
+								    {/options:own_transport}
+								    Please tick if you have your own transport
+								  </label>
+								</div>
+								{error:own_transport}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Preferred contract type</label>
+							<div class="col-sm-9">
+								{exp:css_helpers:contractlist contract_type="{contract_type}"}
+								{error:contract_type}
+							</div>
+						</div>
+
+						<div class="form-group">
+						  <label for="region" class="col-sm-3">Preferred Industry</label>
+						  <div class="col-sm-9">
+						  	{categories category_id="1"}
+						  	<input type="checkbox" name="category[]" value="{category_id}" {checked} />{category_name}<br />
+						  	{/categories}
+						  </div>
+						</div>
+
+						<div class="form-group">
+						  <label for="candidate_salary_min" class="col-sm-3">Minimum salary per annum</label>
+						  <div class="col-sm-9">
+						  	<input name="candidate_salary_min" class="form-control" type="text" value="{candidate_salary_min}" />
+						  </div>
+						</div>
+
+						<div class="form-group">
+						  <label for="candidate_salary_max" class="col-sm-3">Maximum salary per annum</label>
+						  <div class="col-sm-9">
+						 		<input name="candidate_salary_max" class="form-control" type="text" value="{candidate_salary_max}" />
+						  </div>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<legend>Account Settings:</legend>
+
+						<div class="form-group">
+							<label for="name" class="col-sm-3">Username</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="username" name="username" placeholder="username" value="{username}" disabled/>
+								{error:username}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="col-sm-3">Email Address</label>
+							<div class="col-sm-9">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{email}" />
+								{error:email}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="current_password" class="col-sm-3">Current Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="current_password" name="current_password" placeholder="Current Password" />
+								{error:current_password}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3">New Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="new_password" name="new_password" placeholder="New Password" />
+								<span class="help-block">5 characters or more</span>
+								{error:new_password}
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm-password" class="col-sm-3">Confirm Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="new_password_confirm" name="new_password_confirm" placeholder="Confirm Password" />
+								{error:new_password_confirm}
+							</div>
+						</div>
+
+					</fieldset>				  			  
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button type="submit" class="btn btn-cssgreen pull-right">Update Profile</button>
+						</div>
+					</div>
+
+					{/exp:zoo_visitor:update_form}
+				</div>
+				<div class="col-xs-3 column-padding">
+
+					{embed="includes/inc_job_seekers_menu"}
+				</div>
+
+			</div>
+
+			<!-- Right Column -->
+		</div>
+		<div class="col-xs-3">
+			{embed="includes/inc_expertise_menu"}
+			{embed="includes/inc_job_menu"}
+		</div>
+	</div>
+</div>
+</div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

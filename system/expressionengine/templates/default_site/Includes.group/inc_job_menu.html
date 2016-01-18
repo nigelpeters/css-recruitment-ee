@@ -1,0 +1,32 @@
+			  <div class="well well-cssgreen">
+			  	<h2>Latest jobs</h2>
+			  	<ul>
+			  		{exp:channel:entries status="open" channel="css_job_postings" limit="5" dynamic="no"}
+			  			<li>
+			  				<a href="{title_permalink='job-seekers/view'}">{title}<br/>
+			  				<em>
+			  					{if {salary_min} != "0"}
+			  						{if salary_max == "0"}
+			  							£{salary_min} {salary_unit}
+			  						{if:else}
+			  							£{salary_min} - £{salary_max} {salary_unit}
+			  						{/if}
+		  						{if:elseif salary_description == ""}
+		  							{salary_unit}
+		  						{if:else}
+		  							{salary_description}
+			  					{/if}
+			  				</em>
+			  				</a>
+			  			</li>
+			  		{/exp:channel:entries}
+			  	</ul>
+			  	<div class="btn-group btn-group-justified pull-right">
+			  		<a class="btn btn-cssgreen" href="{path='job-seekers/find-your-perfect-job/'}"><span class="glyphicon glyphicon-search pull-right"></span>Search Jobs  </a>
+			  		{if logged_in}
+			  		<a class="btn btn-cssgreen" href="{path='job-seekers/upload-cv'}"><span class="glyphicon glyphicon-cloud-upload pull-right"></span>Upload CV</a>
+			  		{if:else}
+			  		<a class="btn btn-cssgreen" href="{path='job-seekers/login'}"><span class="glyphicon glyphicon-log-in pull-right"></span>Log in</a>
+			  		{/if}
+			  	</div>
+			  </div>

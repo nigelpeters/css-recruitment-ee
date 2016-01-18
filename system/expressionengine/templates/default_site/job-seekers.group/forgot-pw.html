@@ -1,0 +1,63 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+<!-- Begin page content -->
+<header class="internal">
+	<div class="container">
+		<p class="pull-right">Experts in people</p>
+		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	</div>
+</header>
+{embed="green_pages/green_sub_menu"}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="row">
+				<div class="col-xs-9">
+					<h1 class="head-cssgreen">Forgot your password?</h1>
+
+					<p>Please fill out the form below where you will recieve a email to reset your password.</p>
+
+				</div>
+			</div>
+
+			<!-- FORM -->
+			<div class="well well-csslgrey">
+
+				{exp:zoo_visitor:forgot_password error_handling="inline" reset_url="job-seekers/reset-pw" parse="inward" form_class="form-horizontal"}
+				{if password_sent}
+
+				<h3>A password reset mail has been sent to the provided email.</h3>
+
+				{if:else}
+				<div class="form-group">
+					<label for="email" class="col-sm-3">Your Email:</label>
+					<div class="col-sm-9">
+						<input type="text" name="email" id="email" class="form-control" value="" />
+					</div>
+				</div>
+				{error:email}
+
+				<div class="form-group">
+					<div class="col-sm-12">
+						<input type="submit" value="Retrieve password" class="btn btn-cssgreen pull-right" />
+					</div>
+				</div>
+				{/if}
+				{/exp:zoo_visitor:forgot_password}
+			</div>
+
+
+			<!-- Right Column -->
+		</div>
+		<div class="col-xs-3">
+			{embed="includes/inc_job_menu"}
+			{embed="includes/inc_expertise_menu"}
+		</div>
+	</div>
+</div>
+</div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

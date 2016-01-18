@@ -1,0 +1,40 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="home">
+	  	<div class="container">
+	  		<img src="img/logo-css-home.png" alt="logo-css-home" width="429" height="87" />
+	  		
+	  		<div class="homebuts">
+	  			<a class="btn btn-cssgreen btn-lg" href="{path='job-seekers'}">Are you a job seeker? <span class="glyphicon glyphicon-chevron-right"></span></a>
+	  			<a class="btn btn-csscyan btn-lg" href="{path='employer'}">Are you an employer? <span class="glyphicon glyphicon-chevron-right"></span></a>
+	  			<a class="btn btn-csspink btn-lg" href="{path='training'}">Looking for training? <span class="glyphicon glyphicon-chevron-right"></span></a>
+	  		</div>
+	  	</div>
+	  </header>
+
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-6">
+			{exp:channel:entries channel='static_pages' url_title="we-are-experts-in-people"}
+				<div class="intro-text">
+					<h1>{title}</h1>
+					{content}
+				</div>
+			{/exp:channel:entries}
+
+
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+		  </div>
+		  	<div class="col-xs-3">
+			  {embed="includes/inc_expertise_menu"}
+			</div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

@@ -1,0 +1,35 @@
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+
+			{if logged_in}
+	            <ul class="nav navbar-nav navbar-right">
+	            	{if member_group == "1" || member_group == "7"}
+	            	<li><a href="{path='admin.php'}">Control panel</a></li>
+	            	<li class="divider-vertical"></li>
+					<li><a href="{path='job-staff'}">Recruiters panel</a></li>
+	            	{/if}
+	            	{if member_group == "6"}
+	                <li><a href="{path='job-seekers/profile'}">{screen_name} Profile</a></li>
+	            	{/if}
+	            	{if member_group == "8"}
+	                <li><a href="{path='training/downloads'}">Course Downloads</a></li>
+	            	{/if}
+					<li class="divider-vertical"></li>
+	                <li><a href="{path='job-seekers/logout'}">Logout</a></li>
+	            </ul>			
+			{/if}
+			{if logged_out}
+	            <ul class="nav navbar-nav navbar-right">
+	                <li><a href="{path='job-seekers/login'}">Login</a></li>
+					<li class="divider-vertical"></li>
+	                <li><a href="{path='job-seekers/registration'}">Register</a></li>
+	            </ul>			
+			{/if}
+
+            <ul class="nav navbar-nav">
+                <li><a {if segment_1 == ""} class="cssgreyactive" {/if} href="{site_url}"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="divider-vertical"></li>
+				{exp:structure:nav_main include_ul="no" exclude="1|608|607" current_class="active"}
+            </ul>
+        </div>
+    </nav>

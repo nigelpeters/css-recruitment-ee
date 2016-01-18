@@ -1,0 +1,62 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+<!-- Begin page content -->
+<header class="internal">
+	<div class="container">
+		<p class="pull-right">Experts in people</p>
+		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	</div>
+</header>
+{embed="grey_pages/grey_sub_menu"}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="row">
+				<div class="col-xs-10">
+					{exp:channel:entries channel="static_pages"}
+
+					{if main_image != ""}
+					<img src="{main_image}" class="img-responsive img-rounded" alt="{title}" />
+					{/if}
+					<h1 class="head-cssgrey">{title}</h1>
+					{content}
+					{/exp:channel:entries}
+					<hr/>
+
+					{exp:channel:entries channel="team" dynamic="no" orderby="entry_date" sort="asc"}
+					{switch ="<div class='row'><!-- NEW ROW -->|"}
+					<div class="col-xs-6">
+						<article class="team-member">
+							{if bio_personal_image}<img class="img-rounded pull-right" src="{bio_personal_image}" />{/if}
+							{if bio_pro_image}<img class="img-rounded pull-right" src="{bio_pro_image}" height="75" width="75" />{/if}
+							<h2>{screen_name}</h2>
+							<p><i>{css_staff_position}</i></p>
+							<p>{team_bio}</p>
+							<?php $firstname = explode(' ', '{screen_name}'); ?>
+
+							<a href="mailto:hq@csspeople.co.uk" class="btn btn-csscyan btn-xs">Email <?=$firstname[0]; ?>&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-envelope"></span></a>
+
+						</article>				  			
+					</div>
+					{if count != total_results}{switch ="|</div><hr/>"}{/if}
+					{if count == total_results}</div><hr/>{/if}
+					{/exp:channel:entries}
+				</div>
+
+			</div>
+
+
+			<!-- Right Column -->
+		</div>
+		<div class="col-xs-3">
+			{embed="includes/inc_expertise_menu"}
+			{embed="includes/inc_job_menu"}
+		</div>
+	</div>
+</div>
+</div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

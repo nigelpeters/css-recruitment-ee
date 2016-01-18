@@ -1,0 +1,146 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+
+				  		<h1 class="head-cssgreen">Register with us today</h1>
+
+						<p>Please complete the form below to register as a Candidate with CSS People.</p>
+						
+						<p>Registration is free of charge and will enable you to use the following additional features to help in your job search:</p>
+						<ul>
+						    <li>Upload your CV so that Recruiters can find you</li>
+						    <li>Review your previous job applications</li>
+						</ul>
+
+				  </div>
+			  </div>
+
+			{if logged_out}
+		  <!-- FORM -->
+		  <div class="well well-csslgrey">
+		  <h2 class="head-cssgreen">Your Details</h2>
+		  <p>Please fill out the form below.</p>
+			
+		  {exp:zoo_visitor:registration_form class="form-horizontal" return="job-seekers/success-register" error_delimiters="<div class='alert alert-danger'>|</div>"}
+			
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3">Firstname</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="member_firstname" name="member_firstname" placeholder="Firstname" value="{member_firstname}" />
+			      {error:member_firstname}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3">Lastname</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="member_lastname" name="member_lastname" placeholder="Lastname" value="{member_lastname}" />
+			      {error:member_lastname}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3">Username</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="username" name="username" placeholder="username" value="{username}" />
+			      {error:username}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="email" class="col-sm-3">Email Address</label>
+			    <div class="col-sm-9">
+			      <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{email}" />
+			      {error:email}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="confirm-email" class="col-sm-3">Confirm Email</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="email_confirm" name="email_confirm" placeholder="Confirm Email" />
+			      {error:email_confirm}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="region" class="col-sm-3">Region</label>
+			    <div class="col-sm-9">
+			    	{exp:css_helpers:regionlist}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="region" class="col-sm-3">Preferred Industry</label>
+			    <div class="col-sm-9">
+			    	{categories category_id="1"}
+			    	<input type="checkbox" name="category[]" value="{category_id}" {checked} />{category_name}<br />
+			    	{/categories}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="password" class="col-sm-3">Password</label>
+			    <div class="col-sm-9">
+			      <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+			      <span class="help-block">5 characters or more</span>
+			      {error:password}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="confirm-password" class="col-sm-3">Confirm Password</label>
+			    <div class="col-sm-9">
+			      <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password" />
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="agree" class="col-sm-3">Please tick box to confirm the following:</label>
+			    <div class="col-sm-9">
+			      <input type="checkbox" value="y" name="accept_terms" />
+			      <span class="help-block">I have read and agree to the CSS People <a href="{path='terms-and-conditions'}">terms and conditions</a> and <a href="{path='privacy-policy'}">privacy statement</a>. (This is a condition of registration.)</span>
+			      {error:accept_terms}
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-12">
+
+			      <input type="submit" class="btn btn-cssgreen pull-right" value="Register now">
+			    </div>
+			  </div>
+			 		  </div>
+ 
+			{/exp:zoo_visitor:registration_form}
+		  {if:else}
+		  	<div class="alert alert-success">Looks like your already registered and logged in. Thanks!</div>
+		  {/if}
+
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+			  {embed="includes/inc_expertise_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

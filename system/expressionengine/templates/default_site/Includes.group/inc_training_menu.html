@@ -1,0 +1,16 @@
+			  <div class="well well-csspink">
+			  	<h2>Scheduled training courses</h2>
+			  	<ul>
+			  		{exp:channel:entries status="open" channel="training_courses" limit="5" orderby="course_date" sort="asc" dynamic="no" search:course_date="not IS_EMPTY"}
+			  			<li>
+			  				<a href="{title_permalink='training/view'}">{title}<br/>
+			  				<em>{course_date format="%d %F, %Y"}</em>
+			  				</a>
+			  			</li>
+			  		{/exp:channel:entries}
+			  		
+			  	</ul>
+			  	<div class="btn-group btn-group-justified pull-right">
+			  		<a class="btn btn-csspink" href="{path='training/'}"><span class="glyphicon glyphicon-search pull-right"></span>View all Courses</a>
+			  	</div>
+			  </div>

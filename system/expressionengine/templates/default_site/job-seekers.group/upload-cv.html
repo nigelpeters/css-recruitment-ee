@@ -1,0 +1,70 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+				  		<h1 class="head-cssgreen">Upload a CV</h1>
+
+				  		{exp:job_seekers:load_cv_form}
+					  		<span class="btn btn-success fileinput-button">
+					  			<i class="glyphicon glyphicon-plus"></i>
+					  			<span>Select file...</span>
+					  			{exp:zoo_visitor:details}
+					  			<input type="hidden" name="entry_id" value="{entry_id}">
+					  			<input type="hidden" name="member_cv" value="{user_cv}">
+					  			{/exp:zoo_visitor:details}
+					  			<input type="file" name="userfile" >
+					  		</span>
+				  		</form>
+				  		<br>
+				  		<br>
+				  		<div class="progress" id="progress">
+				  		    <div class="progress-bar progress-bar-success"></div>
+				  		</div>
+
+				  		<div id="file"></div>
+
+				  		<hr/>
+						<p class="sub-head">Your Current CV<p>
+					  	{exp:zoo_visitor:details}
+					  	{if user_cv != ""}
+					  		<table class="table">
+					  			<tr>
+					  				<td><?php $cv = explode('/', '{user_cv}'); echo array_pop($cv); ?></td>
+					  			</tr>
+					  		</table>
+					  	{/if}
+					  	{/exp:zoo_visitor:details}
+
+				  </div>
+				  <div class="col-xs-3 column-padding">
+
+				  	{embed="includes/inc_job_seekers_menu"}
+				  </div>
+				  
+			  </div>
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+			  {embed="includes/inc_expertise_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

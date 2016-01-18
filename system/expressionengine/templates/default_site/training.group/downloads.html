@@ -1,0 +1,43 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+<!-- Begin page content -->
+<header class="internal">
+	<div class="container">
+		<p class="pull-right">Experts in people</p>
+		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	</div>
+</header>
+{embed="pink_pages/pink_sub_menu"}
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="row">
+				<div class="col-xs-9">
+					<h1 class="head-csspink">Course Downloads</h1>
+					These are files that will be required for your course.
+					<br/><br/>
+					<table class="table">
+						{exp:protected_links:files}
+						<tr>
+							<td><a href="{link}">{title}</a></td>
+							<td><a href="{link}"><span style="color: red;" class="glyphicon glyphicon-download-alt"></span></a></td>
+						</tr>
+						{/exp:protected_links:files}
+					</table>
+				</div>
+			</div>
+
+			<!-- Right Column -->
+		</div>
+		<div class="col-xs-3">
+			{embed="includes/inc_expertise_menu"}
+			{embed="includes/inc_job_menu"}
+		</div>
+	</div>
+</div>
+</div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

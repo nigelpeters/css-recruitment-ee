@@ -1,0 +1,111 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+
+				  	{exp:channel:entries status="open" channel="css_job_postings"}
+				  	<h1 class="head-cssgreen">{title}</h1>
+				  	
+				  	<div class="well well-cssgreen">
+				  		<div class="row">
+				  			<div class="col-xs-4">
+				  				<p><strong>Region:</strong></p>
+				  				<p class="lead">{region}</p>
+				  			</div>
+				  			<div class="col-xs-3">
+				  				<p><strong>Job Type:</strong></p>
+				  				<p class="lead">{job_contract_type}</p>
+				  			</div>
+				  			<div class="col-xs-5">
+				  				<p><strong>Salary:</strong></p>
+				  				<p class="lead">
+				  				{if {salary_min} != "0"}
+			  						{if salary_max == "0"}
+			  							£{salary_min} {salary_unit}
+			  						{if:else}
+			  							£{salary_min} - £{salary_max} <small>{salary_unit}</small>
+			  						{/if}
+		  						{if:elseif salary_description == ""}
+		  							{salary_unit}	
+		  						{if:else}
+		  							{salary_description}
+			  					{/if}
+				  				</p>
+				  			</div>
+				  		</div>
+				  	</div>
+
+				      <table class="table job-info">
+				        <tbody>
+				          <tr>
+				            <td><p class="lead">Location</p></td>
+				            <td align="right"><p class="lead">{job_location}</p></td>
+				          </tr>
+				          {if salary_description != ""}
+				          <tr>
+				            <td><p class="lead">Salary Description</p></td>
+				            <td align="right"><p class="lead">{salary_description}</p></td>
+				          </tr>
+				          {/if}
+				          {if job_benefits != ""}
+				          <tr>
+				            <td><p class="lead">Job Benefits</p></td>
+				            <td align="right"><p class="lead">{job_benefits}</p></td>
+				          </tr>
+				          {/if}
+				          <tr>
+				            <td><p class="lead">Start date</p></td>
+				            <td align="right"><p class="lead">{if job_start_date== ""}ASAP{if:else}{job_start_date format="%d %F, %Y"}{/if}</p></td>
+				          </tr>
+				        </tbody>
+				      </table>
+				      
+				     <p class="lead">Job Description</p> 
+				  	
+				  	{job_description}
+
+				  </div>
+				  <div class="col-xs-3">
+				  	<div class="well well-csslgrey">
+				  		<h2>Application Info</h2>
+				  		<!-- <p><strong>Job Ref:</strong><br/> CSS15787</p> -->
+						<p><strong>Date Posted:</strong><br/>{entry_date format="%d %F, %Y"}</p>
+						<p><strong>Contact Details:</strong><br/>
+						{author}<br/>
+						{exp:member:custom_profile_data}
+						<em>{css_staff_position}</em></p>
+						<p><strong>Tel:</strong> {css_staff_contact_number}</p>
+						{/exp:member:custom_profile_data}
+						<a class="btn btn-cssgrey btn-block" href="mailto:{email}"><span class="glyphicon glyphicon-envelope pull-right"></span>Email {author} </a>
+				  	</div>
+				  		{exp:job_seekers:job_app_but job_link="{title_permalink='job-seekers/application-form/'}" job_id="{entry_id}"}
+				  		{exp:job_seekers:wishlist_button job_id="{entry_id}"}
+				  </div>
+			  </div>
+
+			  {/exp:channel:entries}
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+				{embed="includes/inc_expertise_menu"}
+			  	{embed="includes/inc_job_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

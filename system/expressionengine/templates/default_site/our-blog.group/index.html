@@ -1,0 +1,88 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="pink_pages/pink_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-12">
+
+				  	<h1 class="head-csspink">Our Blog</h1>
+				  	<hr/>
+
+				  	{exp:channel:entries channel='blog' limit='1' dynamic="no" status="featured"}					
+					<div class="well well-csspink">
+					    <div class="row">
+					    	<div class="col-xs-7">
+					    	<h2><span class="label label-default">Featured Blog</span></h2>
+					  	<h1>{title}</h1>
+					    <p>{exp:excerpt limit="50" indicator="..."}{blog_content}{/exp:excerpt}</p>
+					  			<a href="{title_permalink='our-blog/view'}"  class="btn btn-csspink btn-xs pull-right">Read&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a>
+					    	</div>
+					    	{if blog_featured_image != ""}
+					    	<div class="col-xs-5">
+								<img src="{blog_featured_image}" class="img-responsive img-rounded pull-right">
+					    	</div>
+					    	{/if}
+					    </div>
+					</div>
+					{/exp:channel:entries}
+					
+					{exp:channel:entries channel="blog" status="open" dynamic="no" limit="8"}
+
+					{switch ="<div class='row'>|"}
+				  		<div class="col-xs-6">
+					  		<article class="blog-listing">
+					  			<h2><a href="{title_permalink='our-blog/view'}">{title}</a></h2>
+					  			<p>{exp:excerpt limit="50" indicator="..."}{blog_content}{/exp:excerpt}</p>
+					  			<small><strong>Posted:</strong> {entry_date format="%d%S %F %Y"}</small>
+					  			<a href="{title_permalink='our-blog/view'}" class="btn btn-csspink btn-xs pull-right">Read&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></a>
+					  		</article> 
+				  		</div>
+					{if count != total_results}{switch ="|</div>"}{/if}
+					{if count == total_results}</div>{/if}
+
+					{paginate}
+					  {pagination_links}
+					 <ul class="pagination csspagipink">
+					  {previous_page}
+					  	<li><a href="{pagination_url}">&laquo;</a></li>
+					  {/previous_page}
+					  {page}
+					  	<li {if current_page}class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+					  {/page}
+					  {next_page}
+					  	<li><a href="{pagination_url}">&raquo;</a></li>
+					  {/next_page}	
+					</ul>
+					  {/pagination_links}
+
+					{/paginate}
+
+					{/exp:channel:entries}
+				  					  					  	
+				  </div>
+			</div>
+
+			  
+		  </div>
+		  <!-- Right Column -->
+		  <div class="col-xs-3">
+		  	{embed="includes/inc_expertise_menu"}
+		  	{embed="includes/inc_job_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

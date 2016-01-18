@@ -1,0 +1,19 @@
+php_value memory_limit 256M
+
+AddType video/ogg .ogv
+AddType video/mp4 .mp4
+AddType video/x-m4v .m4v
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+
+        # Removes index.php
+        RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ /css-recruitment-ee/index.php/$1 [L]
+
+        # If 404s, "No Input File" or every URL returns the same thing
+        # make it /index.php?/$1 above (add the question mark)
+        
+
+</IfModule>

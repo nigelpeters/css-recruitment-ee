@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        {exp:seo_lite use_last_segment="yes"}
+
+        <link rel="stylesheet" href="{site_url}js/wysihtml5/css/bootstrap-wysihtml5.css">
+        <link rel="stylesheet" href="{site_url}js/datepicker/css/datepicker.css">
+        <link rel="stylesheet" href="{site_url}css/bootstrap.css">
+        <link rel="stylesheet" href="{site_url}css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{site_url}css/main.css">
+
+        <script src="{site_url}js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+        <link rel="stylesheet" href="{site_url}js/jQuery-File-Upload/css/jquery.fileupload.css">
+
+   </head>
+    
+  <!-- NEW BODY -->
+  <body>
+        <!--[if lt IE 6]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="fb-root"></div>
+        
+        <!-- FOR FACEBOOK -->
+		<script>
+		(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+		</script>
+
+    <!-- Wrap all page content here -->
+    <div id="wrap" class="outer-container">
+
+      {exp:cookie_consent:message}
+        {if cookies_allowed != 'yes'}
+      <div class="cookie-consent">
+          <a class="btn btn-cssgrey pull-right" href="{cookies_allowed_link}">Allow Cookies</a>This website uses cookies so that we can provide you with the best user experience possible.<br/>To read more about the cookies we use and to change your settings see our <a href="{path='cookie-policy'}" >cookies policy</a>.
+      </div>
+        {/if}
+      {/exp:cookie_consent:message}

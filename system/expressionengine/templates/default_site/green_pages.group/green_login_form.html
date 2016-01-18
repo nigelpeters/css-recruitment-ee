@@ -1,0 +1,87 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+					{exp:channel:entries}
+				  		<h1 class="head-cssgreen">{title}</h1>
+				  		{content}
+					{/exp:channel:entries}
+
+
+				  </div>
+			  </div>
+
+		  <!-- FORM -->
+		  <div class="well well-csslgrey">
+		  <h2 class="head-cssgreen">Candidate Login</h2>
+			
+		  {exp:zoo_visitor:login_form form_class="form-horizontal" return="job-seekers/jobseeker-confirmation" error_handling="inline" error_delimiters='<div class="alert alert-danger">|</div>'}
+			
+			  <div class="form-group">
+			    <label for="name" class="col-sm-3">Username</label>
+			    <div class="col-sm-9">
+			      <input type="text" class="form-control" id="username" name="username" placeholder="userame" value="{username}" />
+			      {error:username}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="password" class="col-sm-3">Password</label>
+			    <div class="col-sm-9">
+			      <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+			      <span class="help-block">5 characters or more</span>
+			      {error:password}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="agree" class="col-sm-3">Please tick box to confirm the following:</label>
+			    <div class="col-sm-9">
+			      <input type="checkbox" value="y" name="accept_terms" />
+			      <span class="help-block">I have read and agree to the CSS People <a href="#">terms and conditions</a> and <a href="#">privacy statement</a>. (This is a condition of registration.)</span>
+			      {error:accept_terms}
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <div class="col-sm-12">
+					<input type="checkbox" class="checkbox" name="auto_login" value="1" checked="checked" /> {lang:auto_login}<br />
+					<input type="checkbox" class="checkbox" name="anon" value="1" checked="checked" /> {lang:show_name}
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-12">
+			      <button type="submit" class="btn btn-cssgreen pull-right">Register now</button>
+			    </div>
+			  </div>
+			  
+			{/exp:zoo_visitor:login_form}
+		  
+		  </div>
+
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+			  {embed="includes/inc_expertise_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}

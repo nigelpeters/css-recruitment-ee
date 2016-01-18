@@ -1,0 +1,53 @@
+{embed="includes/main_header"}
+
+{embed="includes/main_menu"}
+
+      <!-- Begin page content -->
+	  <header class="internal">
+	  	<div class="container">
+	  		<p class="pull-right">Experts in people</p>
+	  		<img src="{site_url}img/logo-css-internal.png" alt="logo-css-internal" width="300" height="61" />
+	  	</div>
+	  </header>
+	  {embed="green_pages/green_sub_menu"}
+	  
+      <div class="container">
+		<div class="row">
+		  <div class="col-xs-9">
+			  <div class="row">
+				  <div class="col-xs-9">
+				  		<h1 class="head-cssgreen">Search results</h1>
+
+						<p>Below is a list of potential applicants</p>
+
+					{exp:job_seekers:seekers_results channel="css_job_seekers" limit="20"}
+					  <tr>
+					  	<td>
+					  		<a href="{path='job-staff/profile/{member_id}'}">{title}</a>
+					  	</td>
+					  	<td align="right">
+					  		{region}
+					  	</td>
+					  </tr>
+					  {if no_results}<div class="alert alert-success">Sorry, no results</div>{/if}
+					{/exp:job_seekers:seekers_results}
+
+				  </div>
+				  <div class="col-xs-3 column-padding">
+
+				  	{embed="includes/inc_job_staff_menu"}
+				  </div>
+				  
+			  </div>
+
+		  <!-- Right Column -->
+		  </div>
+		  <div class="col-xs-3">
+			  {embed="includes/inc_job_menu"}
+			  {embed="includes/inc_expertise_menu"}
+		  </div>
+		</div>
+      </div>
+    </div><!-- .wrap close -->
+
+{embed="includes/main_footer"}
