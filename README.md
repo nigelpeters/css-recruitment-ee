@@ -10,7 +10,7 @@ This project was developed using the following programming languages:
 * ExpressionEngine CodeIgniter based CMS
 
 ## View project online:
-[www.csspeople.co.uk](https://www.google.com)
+[www.csspeople.co.uk](http://www.csspeople.co.uk)
 
 ## Job Seeker module
 
